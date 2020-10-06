@@ -15,9 +15,9 @@ class SQSPoller:
         self.options = options
         self.sqs_client = boto3.client('sqs')
         # use this on your mac.  must set KUBECONFIG env var
-        config.load_kube_config()
+        # config.load_kube_config()
         # this is for the cluster
-        #config.load_incluster_config()
+        config.load_incluster_config()
         self.k8client = client.AppsV1Api()
 
         self.last_scale_up_time = time()
